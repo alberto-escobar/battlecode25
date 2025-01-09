@@ -122,8 +122,8 @@ public class RobotPlayer {
             System.out.println("BUILT A MOPPER");
         }
         else if (robotType == 2 && rc.canBuildRobot(UnitType.SPLASHER, nextLoc)){
-            // rc.buildRobot(UnitType.SPLASHER, nextLoc);
-            // System.out.println("BUILT A SPLASHER");
+            rc.buildRobot(UnitType.SPLASHER, nextLoc);
+            System.out.println("BUILT A SPLASHER");
             rc.setIndicatorString("SPLASHER NOT IMPLEMENTED YET");
         }
 
@@ -219,7 +219,7 @@ public class RobotPlayer {
      * Run a single turn for a Splasher.
      * This code is wrapped inside the infinite loop in run(), so it is called once per turn.
      */
-    public static void runSpla(RobotController rc) throws GameActionException{
+    public static void runSplasher(RobotController rc) throws GameActionException{
         // Move and attack randomly.
         Direction dir = directions[rng.nextInt(directions.length)];
         MapLocation nextLoc = rc.getLocation().add(dir);
